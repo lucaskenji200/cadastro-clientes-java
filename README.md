@@ -40,7 +40,7 @@ Primeiro, vamos criar o utilizador que a aplicação usará para se conectar. O 
 
 2.  Dentro do `psql`, execute o comando para criar o novo utilizador:
     ```sql
-    CREATE USER lucas WITH PASSWORD 'admin123';
+    CREATE USER username WITH PASSWORD 'password';
     ```
 
 #### Passo 2.2: Criar a Base de Dados
@@ -71,14 +71,14 @@ Primeiro, vamos criar o utilizador que a aplicação usará para se conectar. O 
 
 #### Passo 2.4: Conceder Permissões
 
-Finalmente, dê ao utilizador `lucas` as permissões necessárias para aceder e modificar a base de dados e a tabela.
+Finalmente, dê ao utilizador com o `username` escolhido as permissões necessárias para aceder e modificar a base de dados e a tabela.
 
 1.  Execute os seguintes comandos no `psql` (ainda conectado à base de dados `customers`):
     ```sql
-    GRANT CONNECT ON DATABASE customers TO lucas;
-    GRANT USAGE ON SCHEMA public TO lucas;
-    GRANT ALL PRIVILEGES ON TABLE clientes TO lucas;
-    GRANT USAGE, SELECT ON SEQUENCE clientes_id_seq TO lucas;
+    GRANT CONNECT ON DATABASE customers TO username;
+    GRANT USAGE ON SCHEMA public TO username;
+    GRANT ALL PRIVILEGES ON TABLE clientes TO username;
+    GRANT USAGE, SELECT ON SEQUENCE clientes_id_seq TO username;
     ```
 
 2.  Saia do `psql` com o comando `\q`. O seu banco de dados está pronto!
