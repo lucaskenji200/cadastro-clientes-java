@@ -31,7 +31,7 @@ A aplicação precisa de uma base de dados, um utilizador e uma tabela para func
 
 #### Passo 2.1: Criar o Utilizador do Banco
 
-Primeiro, vamos criar o utilizador que a aplicação usará para se conectar. O código está configurado para usar o utilizador `lucas` com a senha `admin123`.
+Primeiro, vamos criar o utilizador que a aplicação usará para se conectar. O código está configurado para usar o utilizador com a senha que escolher.
 
 1.  Abra um terminal e conecte-se ao `psql` como superutilizador:
     ```bash
@@ -102,6 +102,10 @@ Com o banco de dados configurado, agora pode compilar e rodar o projeto.
 
 A janela da aplicação deverá abrir, conectada ao banco de dados e pronta para ser usada.
 
+
+
+**OBS.: Para funcionar o código, troque no SQLConnection.java o nome do usuário e a senha escolhidas**
+
 ---
 
 ## Arquitetura e Decisões de Projeto
@@ -134,3 +138,4 @@ Para separar a lógica de negócio da lógica de acesso aos dados, foi utilizado
 ### 3. Gerenciamento de Dependências com Maven
 
 * **`pom.xml`:** O projeto utiliza o Maven para gerir as suas dependências. A única dependência externa é o driver JDBC do PostgreSQL. O Maven descarrega-o automaticamente, evitando a necessidade de adicionar ficheiros `.jar` manualmente ao projeto. O `maven-assembly-plugin` também é usado para empacotar a aplicação e todas as suas dependências num único ficheiro `.jar` executável, o que simplifica muito a distribuição.
+
